@@ -1,0 +1,29 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "BEG",
+    "symbol": "BEG",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "BegVault",
+      "constructorArgs": [
+        "$token",
+        "$owner",
+        "0xa43e6f75ee006411f79ac1c84120606c2330de82",
+        "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+        "0x5598aa9146215bc13eb26f2c692ad1461fd32982",
+        "5000000000000000"
+      ]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "BegVault is immutable, with no owner, admin, pause or upgrade functions. Constructor arguments are BEG token, team payment beneficiary, Intake, IMD, oracle signer and entry price (0.005 ETH). $owner receives the team payment entitlement without administrative powers. Protocol addresses follow the accepted deployment documentation; live verification remains a predeployment requirement. BegVault starts unfunded and rejects attempts with VaultEmpty until funded by a BEG transfer after deployment. The intended launch-wallet funding amount is not enforced on chain. No initialization calls are required. The factory supplies MerkleDistributor and the initialization-only pool guard. The service derives the opening price from launch policy."
+}
